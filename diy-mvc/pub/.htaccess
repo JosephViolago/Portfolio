@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Checks if path request is a file (-f) or directory (-d)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirects back to "index.php" if Lines 5 OR 6 is TRUE
+RewriteRule ^(.*)$ index.php?url=$1 [PT,L]
+
+</IfModule>
